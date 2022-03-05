@@ -11,6 +11,17 @@ internal static class SourceGenerationHelper
             public class AutogenEnumAttribute : System.Attribute
             {
             }
+
+            [System.AttributeUsage(System.AttributeTargets.All)]
+            public class TextAttribute : System.Attribute
+            {
+                public string Text { get; }
+
+                public TextAttribute(string text)
+                {
+                    Text = text;
+                }
+            }
         }
         """;
 
@@ -27,12 +38,11 @@ namespace Autogen.Enum
             sb.Append(@"
         public static string ToStringFast(this ").Append(enumToGenerate.Name).Append(@" value) => value switch
         {");
-            foreach (var member in enumToGenerate.Values)
+            foreach (var (Member, Text) in enumToGenerate.Values)
             {
                 sb.Append(@"
-            ").Append(enumToGenerate.Name).Append('.').Append(member)
-                .Append(" => nameof(")
-                .Append(enumToGenerate.Name).Append('.').Append(member).Append("),");
+            ").Append(enumToGenerate.Name).Append('.').Append(Member).Append(" => ")
+                .Append(Text).Append(",");
             }
 
             sb.Append(@"

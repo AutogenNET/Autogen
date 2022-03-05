@@ -11,7 +11,8 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.1.0" PrivateAssets="all" />
     </ItemGroup>
 
-    <ItemGroup>
+
+	<ItemGroup>
         <ProjectReference Include="..\Autogen.Core\Autogen.Core.csproj" />
     </ItemGroup>
 </Project>

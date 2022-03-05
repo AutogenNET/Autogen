@@ -5,13 +5,17 @@ VisualStudioVersion = 17.2.32210.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autogen.SourceGeneration", "src\Autogen.SourceGeneration\Autogen.SourceGeneration.csproj", "{FCEC5A88-84CE-4C73-BEB6-53205DC0AAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autogen.Enum", "src\Autogen.Enum\Autogen.Enum.csproj", "{9D7C73C1-3239-414D-A4F3-A128059E86E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autogen.Enum", "src\Autogen.Enum\Autogen.Enum.csproj", "{9D7C73C1-3239-414D-A4F3-A128059E86E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autogen.Core", "src\Autogen.Core\Autogen.Core.csproj", "{CBB0F928-616F-441D-96F6-CE4C054B9627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autogen.Core", "src\Autogen.Core\Autogen.Core.csproj", "{CBB0F928-616F-441D-96F6-CE4C054B9627}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D77A3EEA-FC23-4304-BCD7-A42400656066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autogen.Tests", "tests\Autogen.Tests\Autogen.Tests.csproj", "{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autogen.Tests", "tests\Autogen.Tests\Autogen.Tests.csproj", "{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{4CA9D7D7-E8DA-4E85-BA5A-A728E30F202E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autogen.Enum.Sample", "samples\Autogen.Enum.Sample\Autogen.Enum.Sample.csproj", "{92F6B38B-876D-4D3B-B9A5-07EC1CBED028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +39,19 @@ Global
 		{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F6B38B-876D-4D3B-B9A5-07EC1CBED028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F6B38B-876D-4D3B-B9A5-07EC1CBED028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F6B38B-876D-4D3B-B9A5-07EC1CBED028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F6B38B-876D-4D3B-B9A5-07EC1CBED028}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {10DAE0B8-FCCE-4F0C-9F82-95298E0A5050}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{24F2CC73-0B2F-4B3C-902B-AD1553B82BE4} = {D77A3EEA-FC23-4304-BCD7-A42400656066}
+		{92F6B38B-876D-4D3B-B9A5-07EC1CBED028} = {4CA9D7D7-E8DA-4E85-BA5A-A728E30F202E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10DAE0B8-FCCE-4F0C-9F82-95298E0A5050}
 	EndGlobalSection
 EndGlobal

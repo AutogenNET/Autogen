@@ -3,7 +3,6 @@ using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
 using VerifyXunit;
 using Autogen.SourceGeneration;
-using System.Collections.Generic;
 
 namespace Autogen.Tests;
 
@@ -12,16 +11,16 @@ public class TestHelper
     public static Task Verify(string source)
     {
         // 제공된 문자열을 C# 구문 트리로 구문 분석
-        SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(source);
+        var syntaxTree = CSharpSyntaxTree.ParseText(source);
         // 필요한 어셈블리에 대한 참조 생성
         // 필요한 경우 여러 참조를 추가할 수 있습니다.
-        IEnumerable<PortableExecutableReference> references = new[]
+        var references = new[]
         {
             MetadataReference.CreateFromFile(typeof(object).Assembly.Location)
         };
 
         // 구문 트리에 대한 Roslyn 컴파일 생성
-        CSharpCompilation compilation = CSharpCompilation.Create(
+        var compilation = CSharpCompilation.Create(
             assemblyName: "Tests",
             syntaxTrees: new[] { syntaxTree },
             references: references
