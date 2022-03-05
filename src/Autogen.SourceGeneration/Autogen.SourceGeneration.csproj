@@ -21,4 +21,5 @@
     <ProjectReference Include="..\Autogen.Core\Autogen.Core.csproj" />
     <ProjectReference Include="..\Autogen.Enum\Autogen.Enum.csproj" />
   </ItemGroup>
+	
 </Project>
