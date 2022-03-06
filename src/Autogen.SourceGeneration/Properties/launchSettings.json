@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "AutogenEnum.Sample": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\samples\\AutogenEnum.Sample\\AutogenEnum.Sample.csproj"
+    }
+  }
+}
