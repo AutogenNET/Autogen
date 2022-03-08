@@ -12,7 +12,8 @@ public class EnumGeneratorTests
     [Fact]
     public Task TestAutogenEnum()
     {
-        var source = """
+        var source =
+@"
             using Autogen.Enum;
 
             [AutogenEnum]
@@ -21,7 +22,7 @@ public class EnumGeneratorTests
                 Red,
                 Blue,
             }
-            """;
+";
 
         return TestHelper.Verify(source);
     }
@@ -29,18 +30,19 @@ public class EnumGeneratorTests
     [Fact]
     public Task TestAutogenEnumWithTextAttribute1()
     {
-        var source = """
+        var source =
+@"
             using Autogen.Enum;
 
             [AutogenEnum]
             public enum Color
             {
-                [Text("»¡°­")]
+                [Text(""»¡°­"")]
                 Red = 0,
-                [Text("ÆÄ¶û")]
+                [Text(""ÆÄ¶û"")]
                 Blue = 1,
             }
-            """;
+";
 
         return TestHelper.Verify(source);
     }
@@ -48,19 +50,20 @@ public class EnumGeneratorTests
     [Fact]
     public Task TestAutogenEnumWithTextAttribute2()
     {
-        var source = """
+        var source =
+@"
             using Autogen.Enum;
 
             [AutogenEnum]
             public enum Color
             {
-                [Text("»¡°­")]
+                [Text(""»¡°­"")]
                 Red = 0,
                 Blue = 1,
-                [Text("³ë¶û")]    
+                [Text(""³ë¶û"")]    
                 Yellow = 2,
             }
-            """;
+  ";
 
         return TestHelper.Verify(source);
     }

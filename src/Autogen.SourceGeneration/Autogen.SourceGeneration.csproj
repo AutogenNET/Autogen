@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<LangVersion>preview</LangVersion>
-		<IsRoslynComponent>true</IsRoslynComponent>
+		<!--<IsRoslynComponent>true</IsRoslynComponent>-->
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,11 +16,6 @@
 
 	<ItemGroup>
 		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Autogen.Core\Autogen.Core.csproj" OutputItemType="Analyzer" />
-		<ProjectReference Include="..\Autogen.Enum\Autogen.Enum.csproj" OutputItemType="Analyzer" />
 	</ItemGroup>
 
 	<!--<PropertyGroup>

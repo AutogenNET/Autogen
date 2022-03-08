@@ -1,4 +1,6 @@
 ﻿
+using Autogen.SourceGeneration;
+
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
@@ -8,17 +10,18 @@ using System.Text;
 
 namespace Autogen.Enum;
 
-public class SourceGenerator : Core.ISourceGenerator
+[Generator]
+public class EnumSourceGenerator : SourceGenerator
 {
     private const string TargetAttribute = "Autogen.Enum.AutogenEnumAttribute";
 
 
-    public string AddSourcePostInit()
+    protected override string AddSourcePostInit()
     {
         return SourceGenerationHelper.Attribute;
     }
 
-    public void Execute(Compilation compilation, ImmutableArray<EnumDeclarationSyntax> enums, SourceProductionContext context)
+    protected override void Execute(Compilation compilation, ImmutableArray<EnumDeclarationSyntax> enums, SourceProductionContext context)
     {
         if (enums.IsDefaultOrEmpty)
             return;
@@ -34,7 +37,7 @@ public class SourceGenerator : Core.ISourceGenerator
         }
     }
 
-    public EnumDeclarationSyntax? GetSemanticTargetForGeneration(Microsoft.CodeAnalysis.GeneratorSyntaxContext context)
+    protected override EnumDeclarationSyntax? GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
     {
         var enumDeclarationSyntax = (EnumDeclarationSyntax)context.Node;
 
@@ -56,7 +59,7 @@ public class SourceGenerator : Core.ISourceGenerator
         return null;
     }
 
-    public bool IsSyntaxTargetForGeneration(SyntaxNode node)
+    protected override bool IsSyntaxTargetForGeneration(SyntaxNode node)
     {
         return node is EnumDeclarationSyntax { AttributeLists.Count: > 0 };
     }

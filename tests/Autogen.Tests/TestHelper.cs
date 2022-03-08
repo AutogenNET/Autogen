@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
 using VerifyXunit;
 using Autogen.SourceGeneration;
+using Autogen.Enum;
 
 namespace Autogen.Tests;
 
@@ -27,7 +28,7 @@ public class TestHelper
             );
 
         // EnumGenerator 증분 소스 생성기의 인스턴스 생성
-        var generator = new SourceGenerator();
+        var generator = new EnumSourceGenerator();
 
         // GeneratorDriver는 컴파일에 대해 생성기를 실행하는데 사용됨
         GeneratorDriver driver = CSharpGeneratorDriver.Create(generator);

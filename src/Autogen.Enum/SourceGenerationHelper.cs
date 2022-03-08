@@ -4,26 +4,27 @@ namespace Autogen.Enum;
 
 internal static class SourceGenerationHelper
 {
-    public const string Attribute = """
-        namespace Autogen.Enum
+    public const string Attribute =
+@"
+namespace Autogen.Enum
+{
+    [System.AttributeUsage(System.AttributeTargets.Enum)]
+    public class AutogenEnumAttribute : System.Attribute
+    {
+    }
+
+    [System.AttributeUsage(System.AttributeTargets.All)]
+    public class TextAttribute : System.Attribute
+    {
+        public string Text { get; }
+
+        public TextAttribute(string text)
         {
-            [System.AttributeUsage(System.AttributeTargets.Enum)]
-            public class AutogenEnumAttribute : System.Attribute
-            {
-            }
-
-            [System.AttributeUsage(System.AttributeTargets.All)]
-            public class TextAttribute : System.Attribute
-            {
-                public string Text { get; }
-
-                public TextAttribute(string text)
-                {
-                    Text = text;
-                }
-            }
+            Text = text;
         }
-        """;
+    }
+}
+";
 
     public static string GenerateExtensionClass(IEnumerable<EnumToGenerate> enumsToGenerate)
     {
