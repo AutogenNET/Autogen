@@ -7,6 +7,13 @@
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<LangVersion>preview</LangVersion>
 		<!--<IsRoslynComponent>true</IsRoslynComponent>-->
+
+		<Authors>dimohy</Authors>
+		<Title>Autogen.SourceGeneration</Title>
+		<Description>Autogen.SourceGeneration provides the basic source generation structure of Autogen.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/AutogenNET/Autogen</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
